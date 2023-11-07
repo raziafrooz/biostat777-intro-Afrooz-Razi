@@ -1,0 +1,34 @@
+---
+title: "Afrooz Razi"
+image: images/AfroozRazi.jpg
+about: 
+  template: trestles
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/raziafro0z
+    - icon: github
+      text: Github
+      href: https://github.com/raziafrooz
+    - text: Linkedin
+      href: https://www.linkedin.com/in/afroozrazi/
+comments: false
+---
+
+# About me:
+
+My name is Afrooz Razi and I am a Ph.D. candidate at the Johns Hopkins University School of Medicine.
+
+# Research background:
+
+I earned my Bachelor of Science degree in Cell Biology and Molecular Genetics at the [University of Maryland](https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/cell-biology-molecular-genetics/), College Park in 2018. After graduation, I worked as a lab technician at [Dr. Kevin S. McIver's](https://mciverlab.weebly.com) lab where I was introduced to genomics research. Pursuing this interest, I chose the [Human Genetics and Genomics](https://www.hopkinsmedicine.org/genetic-medicine/education-training/predoctoral-human-genetics) Ph.D. program in 2020 and was fascinated by the cutting edge research being done at [Dr. Kasper D. Hansen's](https://www.hansenlab.org) lab. I joined the lab in 2021 and have been involved in multiple different projects since then. I am interested in understanding the effects of non-coding genetic variations on allelic imbalance. I hope that my contribution in research helps us with better understanding in the non-coding variations that result in common as well as rare diseases.
+
+# Involvement
+
+-   Co-organizer at [R-Ladies Baltimore](https://rladies-baltimore.github.io)
+
+-   Volunteer at [Bioconductor conference 2023](https://bioc2023.bioconductor.org)
+
+# Contact:
+
+arazi2\@jhmi.edu

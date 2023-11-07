@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Afrooz Razi"
+  navbar:
+    background: dark
+    foreground: light
+    search: true
+    right:
+      - text: "Presentations"
+        file: present.qmd
+      - text: "Publications"
+        file: pub.qmd
+      - icon: github
+        href: https://github.com/raziafrooz
+      - icon: twitter
+        href: https://twitter.com/raziafro0z
+
+
+format:
+  html:
+    theme: pulse
+    css: styles.css
+    toc: true
+
+editor: visual
+
