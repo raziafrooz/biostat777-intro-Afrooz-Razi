@@ -1,5 +1,17 @@
 ---
-title: "About"
+title: "About me"
 ---
 
-About this site
+# Google scholars
+
+For a list of publications, please visit [Google Scholar](https://scholar.google.com/citations?hl=en&user=JXk5t04AAAAJ).
+
+1.  **Afrooz Razi**, Christopher C. Lo, Sirou Wang, Jeffrey T. Leek, Kasper D. Hansen (2023). *Genotype prediction of 336,463 samples from public expression data.* bioRxiv  <https://doi.org/10.1101/2023.10.21.562237>
+
+2.  Leandros Boukas, Teresa Romeo Luperchio, **Afrooz Razi**, Kasper D Hansen, Hans T Bjornsson (2023). *Neuron-specific chromatin disruption at CpG islands and aging-related regions in Kabuki syndrome mice*. bioRxiv <https://doi.org/10.1101/2023.08.01.551456>
+
+3.  L Boukas, **A Razi**, HT Bjornsson, KD Hansen (2022). *Natural selection acts on epigenetic marks*. bioRxiv <https://doi.org/10.1101/2020.07.04.187880>
+
+4.  Rezia Era Braza, Aliyah B Silver, Ganesh S Sundar, Sarah E Davis, **Afrooz Razi,** Emrul Islam, Meaghan Hart, Jinyi Zhu, Yoann Le Breton, Kevin S McIver (2020). *Phosphotransferase system uptake and metabolism of the β-Glucoside salicin impact group A streptococcal bloodstream survival and soft tissue infection.* Infection and Immunity 88 (10), 10.1128/iai. 00346-20
+
+# 

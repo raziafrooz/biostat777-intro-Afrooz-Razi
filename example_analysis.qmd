@@ -1,0 +1,112 @@
+# Data Analysis
+
+## Motivation:
+
+For this section, I will investigate the crime dataset for few different cities across the US.
+
+![](images/us_map.png)
+
+-   I aim to answer the question: Which cities have highest crime rate? Is the crime rate higher depending on month/day/time?
+
+-   This analysis can be useful for police department in these cities as well as tourists who are planning their holiday trips. With holidays around the corner, using this data analysis, the police department can assign more units to areas with higher crime rate to insure safety of visitors at the times where the crime rate tends to be higher.
+
+-   I found this data from an [R package](https://cran.r-project.org/web/packages/crimedata/vignettes/introduction.html) which includes data from here: https://osf.io/zyaqn/
+
+::: callout-note
+I found this dataset via Google search for this assignment.
+:::
+
+```{r , echo=FALSE, warning=FALSE}
+#| label: load-package
+#| inclued: false
+library(ggplot2)
+library(lubridate) 
+library(tidyverse)
+library(crimedata)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: load-data
+#| inclued: false
+crime_data <- get_crime_data()
+
+```
+
+## City with highest crime rate:
+
+Use bar plot to get an overall understanding of which city has the highest crime rate
+
+```{r}
+
+#Look at the bar plot to understand which city had the most crime report:
+ggplot(crime_data,aes(city_name))+
+  geom_bar(fill="salmon")+
+  labs(title = "Total amount of police crime report based",
+       subtitle = "Data is for 2022. NY has the highest crime rate",
+       caption= "Data from crimedata package",
+       x="City name",
+       y= "number of crimes reported")+
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
+
+
+```
+
+## Crime rate based on month:
+
+First count the total number of crimes reported for each city. Then arrange them from highest crime rate to lowest
+
+```{r}
+
+crime_data %>% group_by(city_name,) %>% summarize(total_crime=n()) %>% arrange(-total_crime) %>%  ungroup()
+#New York,Houston,Memphis,San Francisco are the top 4 cities with highest crime rate
+
+#data wrangling:
+crime_data_clean<-crime_data %>% 
+  select(c(city_name,offense_type,offense_group,offense_against,date_single)) %>%
+  mutate(month=month(date_single,label=TRUE),
+                      day=day(date_single),
+                      hour= hour(date_single))
+
+
+#only look at top 4 cities
+crime_data_clean_top<-crime_data_clean %>% group_by(city_name,month) %>%  mutate(total=n())
+  
+
+
+ggplot(crime_data_clean_top, aes(x=month, y=total,color=city_name))+
+  geom_point()+
+  labs(title = "Total amount of police crime report in each month for each city",
+       subtitle = "Data is for 2022. Summer and Dec have the highest crime rate\nExepct NY and Houston that have the highest crime only in summer",
+       caption= "Highest crime rate in summer across all cities",
+       x="Month",
+       y= "number of crimes reported")
+
+
+  
+
+```
+
+# Crime rate based on day
+
+Only looking at NY (highest crime rate), I would like to know if there is a pattern across days of the month.
+
+```{r}
+
+crime_data_clean_top<- crime_data_clean %>% filter(city_name == "New York")
+
+
+ggplot(crime_data_clean_top, aes(day))+
+  geom_freqpoly()+
+  facet_wrap(vars(month))+
+  geom_vline(xintercept = 15, color="red")+
+  labs(title = "Crime frequency in days of each month in 2022 for New York (highest crime rate) ",
+       subtitle = "Data is shown for each day for 12 months. \nFacet based on months. Red line shows day=15",
+       caption= "Day 15 of each month has highest crime rate",
+       x="Day of the month",
+       y= "Number of crimes reported")
+
+```
+
+::: callout-note
+This analysis was done only for 2022. The crime pattern might be different for other years.
+:::
