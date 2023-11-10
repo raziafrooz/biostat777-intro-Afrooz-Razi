@@ -1,8 +1,14 @@
+---
+title: "Example analysis"
+editor: visual
+bibliography: ref.bib
+---
+
 # Data Analysis
 
 ## Motivation:
 
-For this section, I will investigate the crime dataset for few different cities across the US.
+For this section, I will investigate the crime dataset for few different cities across the US [@US_map].
 
 ![](images/us_map.png)
 
@@ -10,7 +16,7 @@ For this section, I will investigate the crime dataset for few different cities 
 
 -   This analysis can be useful for police department in these cities as well as tourists who are planning their holiday trips. With holidays around the corner, using this data analysis, the police department can assign more units to areas with higher crime rate to insure safety of visitors at the times where the crime rate tends to be higher.
 
--   I found this data from an [R package](https://cran.r-project.org/web/packages/crimedata/vignettes/introduction.html) which includes data from here: https://osf.io/zyaqn/
+-   I found this data from an [R package](https://cran.r-project.org/web/packages/crimedata/vignettes/introduction.html) which includes data from here: https://osf.io/zyaqn/ [@crimedata]
 
 ::: callout-note
 I found this dataset via Google search for this assignment.
@@ -53,7 +59,7 @@ ggplot(crime_data,aes(city_name))+
 
 ## Crime rate based on month:
 
-First count the total number of crimes reported for each city. Then arrange them from highest crime rate to lowest
+First count the total number of crimes reported for each city using tidyverse [@R_dataSC]. Then arrange them from highest crime rate to lowest
 
 ```{r}
 
@@ -86,6 +92,12 @@ ggplot(crime_data_clean_top, aes(x=month, y=total,color=city_name))+
 
 ```
 
+::: column-margin
+
+NY has the highest crime rate across cities in the US. In addition, the crime rate is highest in the summer.
+
+:::
+
 # Crime rate based on day
 
 Only looking at NY (highest crime rate), I would like to know if there is a pattern across days of the month.
@@ -107,6 +119,24 @@ ggplot(crime_data_clean_top, aes(day))+
 
 ```
 
-::: callout-note
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
 This analysis was done only for 2022. The crime pattern might be different for other years.
 :::
+
+# Conclusion
+
+I started this analysis by looking at the crime rate across multiple cities in the US. In 2022, NY had the highest crime rate followed by Houston, Memphis, San Francisco.
+
+All cities had similar pattern of crime rate across various months. All the cities have higher crime rate during the summer (Jun and July). In addition, majority of the cities also have an increase in crime rate in December expect NY and Houston.
+
+Looking at the city with the highest crime rate (NY), I was wondering if there is a specific pattern when looking at different days in a month. This analysis showed that for some reason, there is an increase in the crime rate around middle of the month (day=15). This pattern is seen in most months. To understand why this pattern is seen, we need more information on specific locations and areas where different crimes are seen.
+
+# Functions used:
+
+dyplr/tidyr: select(), mutate(), filter(), group_by(), arrange(), summarize(), month(), day(), hour()
+
+ggplot: geom_bar(), geom_point(), geom_freqpoly()
+
+## References

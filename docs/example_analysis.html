@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Afrooz Razi – example_analysis</title>
+<title>Afrooz Razi - Example analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -155,24 +174,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#crime-rate-based-on-month" id="toc-crime-rate-based-on-month" class="nav-link" data-scroll-target="#crime-rate-based-on-month">Crime rate based on month:</a></li>
   </ul></li>
   <li><a href="#crime-rate-based-on-day" id="toc-crime-rate-based-on-day" class="nav-link" data-scroll-target="#crime-rate-based-on-day">Crime rate based on day</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used">Functions used:</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Example analysis</h1>
+</div>
 
 
 
-<section id="data-analysis" class="level1">
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data-analysis" class="level1 page-columns page-full">
 <h1>Data Analysis</h1>
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation:</h2>
-<p>For this section, I will investigate the crime dataset for few different cities across the US.</p>
+<p>For this section, I will investigate the crime dataset for few different cities across the US <span class="citation" data-cites="US_map">(<a href="#ref-US_map" role="doc-biblioref"><em>United States Map</em>, n.d.</a>)</span>.</p>
 <p><img src="images/us_map.png" class="img-fluid"></p>
 <ul>
 <li><p>I aim to answer the question: Which cities have highest crime rate? Is the crime rate higher depending on month/day/time?</p></li>
 <li><p>This analysis can be useful for police department in these cities as well as tourists who are planning their holiday trips. With holidays around the corner, using this data analysis, the police department can assign more units to areas with higher crime rate to insure safety of visitors at the times where the crime rate tends to be higher.</p></li>
-<li><p>I found this data from an <a href="https://cran.r-project.org/web/packages/crimedata/vignettes/introduction.html">R package</a> which includes data from here: https://osf.io/zyaqn/</p></li>
+<li><p>I found this data from an <a href="https://cran.r-project.org/web/packages/crimedata/vignettes/introduction.html">R package</a> which includes data from here: https://osf.io/zyaqn/ <span class="citation" data-cites="crimedata">(<a href="#ref-crimedata" role="doc-biblioref">Ashby 2023</a>)</span></p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -227,67 +266,31 @@ Downloading sample data for All Cities in 2022</code></pre>
   |                                                                            
   |=====                                                                 |   7%
   |                                                                            
+  |======                                                                |   9%
+  |                                                                            
   |=======                                                               |  10%
   |                                                                            
   |========                                                              |  11%
   |                                                                            
-  |========                                                              |  12%
-  |                                                                            
-  |==========                                                            |  14%
-  |                                                                            
-  |============                                                          |  17%
-  |                                                                            
-  |=============                                                         |  19%
-  |                                                                            
-  |==============                                                        |  19%
-  |                                                                            
-  |===============                                                       |  22%
-  |                                                                            
-  |================                                                      |  23%
-  |                                                                            
-  |=================                                                     |  24%
-  |                                                                            
-  |==================                                                    |  25%
-  |                                                                            
   |==================                                                    |  26%
-  |                                                                            
-  |===================                                                   |  28%
-  |                                                                            
-  |====================                                                  |  29%
   |                                                                            
   |=====================                                                 |  30%
   |                                                                            
-  |=======================                                               |  32%
+  |==================================================                    |  72%
   |                                                                            
-  |========================                                              |  34%
-  |                                                                            
-  |=========================                                             |  36%
-  |                                                                            
-  |============================                                          |  41%
-  |                                                                            
-  |==============================                                        |  42%
-  |                                                                            
-  |=================================                                     |  47%
-  |                                                                            
-  |====================================                                  |  51%
-  |                                                                            
-  |======================================                                |  55%
-  |                                                                            
-  |=========================================                             |  58%
-  |                                                                            
-  |===========================================                           |  62%
-  |                                                                            
-  |============================================                          |  63%
-  |                                                                            
-  |==============================================                        |  66%
-  |                                                                            
-  |==================================================                    |  71%
+  |=====================================================                 |  75%
   |                                                                            
   |=====================================================                 |  76%
   |                                                                            
-  |======================================================                |  77%
+  |=========================================================             |  81%
   |                                                                            
-  |============================================================          |  86%
+  |==============================================================        |  88%
+  |                                                                            
+  |=================================================================     |  92%
+  |                                                                            
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  97%
   |                                                                            
   |======================================================================| 100%</code></pre>
 </div>
@@ -311,9 +314,9 @@ Downloading sample data for All Cities in 2022</code></pre>
 </div>
 </div>
 </section>
-<section id="crime-rate-based-on-month" class="level2">
+<section id="crime-rate-based-on-month" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="crime-rate-based-on-month">Crime rate based on month:</h2>
-<p>First count the total number of crimes reported for each city. Then arrange them from highest crime rate to lowest</p>
+<p>First count the total number of crimes reported for each city using tidyverse <span class="citation" data-cites="R_dataSC">(<a href="#ref-R_dataSC" role="doc-biblioref">Garrett Grolemund 2022</a>)</span>. Then arrange them from highest crime rate to lowest</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>crime_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(city_name,) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">total_crime=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>total_crime) <span class="sc">%&gt;%</span>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -361,7 +364,10 @@ Downloading sample data for All Cities in 2022</code></pre>
 <p><img src="example_analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>NY has the highest crime rate across cities in the US. In addition, the crime rate is highest in the summer.</p>
+</div></div></section>
 </section>
 <section id="crime-rate-based-on-day" class="level1">
 <h1>Crime rate based on day</h1>
@@ -386,24 +392,52 @@ Downloading sample data for All Cities in 2022</code></pre>
 <p><img src="example_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Expand To Learn About Collapse
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This analysis was done only for 2022. The crime pattern might be different for other years.</p>
 </div>
 </div>
+</div>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I started this analysis by looking at the crime rate across multiple cities in the US. In 2022, NY had the highest crime rate followed by Houston, Memphis, San Francisco.</p>
+<p>All cities had similar pattern of crime rate across various months. All the cities have higher crime rate during the summer (Jun and July). In addition, majority of the cities also have an increase in crime rate in December expect NY and Houston.</p>
+<p>Looking at the city with the highest crime rate (NY), I was wondering if there is a specific pattern when looking at different days in a month. This analysis showed that for some reason, there is an increase in the crime rate around middle of the month (day=15). This pattern is seen in most months. To understand why this pattern is seen, we need more information on specific locations and areas where different crimes are seen.</p>
+</section>
+<section id="functions-used" class="level1">
+<h1>Functions used:</h1>
+<p>dyplr/tidyr: select(), mutate(), filter(), group_by(), arrange(), summarize(), month(), day(), hour()</p>
+<p>ggplot: geom_bar(), geom_point(), geom_freqpoly()</p>
+<section id="references" class="level2">
+
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-crimedata" class="csl-entry" role="listitem">
+Ashby, Matthew. 2023. <em>Crimedata</em>. <a href="https://cran.r-project.org">https://cran.r-project.org</a>.
+</div>
+<div id="ref-R_dataSC" class="csl-entry" role="listitem">
+Garrett Grolemund, Hadley Wickham. 2022. <em>R for Data Science (2e)</em>. <a href="https://r4ds.hadley.nz">https://r4ds.hadley.nz</a>.
+</div>
+<div id="ref-US_map" class="csl-entry" role="listitem">
+<em>United States Map</em>. n.d. <a href="https://stock.adobe.com">https://stock.adobe.com</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
